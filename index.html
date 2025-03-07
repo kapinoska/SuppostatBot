@@ -1,111 +1,301 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
     <title>Support Responses</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            margin: 20px;
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+        background-color: #f0f8ff;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #87ceeb;
+      }
+
+      th,
+      td {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 15px;
+        text-align: left;
+        transition: all 0.2s ease;
+        word-wrap: break-word;
+      }
+
+      th {
+        background-color: #4682b4;
+        color: white;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      tr:nth-child(even) {
+        background-color: #b0e0e6;
+      }
+
+      td {
+        cursor: pointer;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      td:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .notification {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        display: none;
+        animation: slideUp 0.3s ease;
+      }
+
+      @keyframes slideUp {
+        from {
+          bottom: -50px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #87CEEB;
+        to {
+          bottom: 20px;
         }
-        th, td {
-            border: 1px solid #fff;
-            padding: 10px;
-            text-align: left;
-            cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
         }
-        th {
-            background-color: #4682B4;
-            color: white;
+
+        thead tr {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
         }
-        tr:nth-child(even) {
-            background-color: #b0e0e6;
+
+        tr {
+          margin: 0 0 15px 0;
+          background: #87ceeb;
+          border-radius: 10px;
         }
+
+        td {
+          border: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+          position: relative;
+          padding-left: 45%;
+          min-height: 40px;
+        }
+
+        td:before {
+          position: absolute;
+          left: 15px;
+          width: 40%;
+          padding-right: 10px;
+          white-space: nowrap;
+          content: attr(data-label);
+          font-weight: bold;
+          color: #2c3e50;
+        }
+
+        .container {
+          border-radius: 0;
+          padding: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        td {
+          padding-left: 40%;
+          font-size: 0.9rem;
+        }
+
+
+        td:before {
+          font-size: 0.8rem;
+        }
+      }
     </style>
-    <script>
-        function copyToClipboard(element) {
-            let text = element.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("Meow ^_^ <3: " + text.substring(0, 100) + (text.length > 100 ? "..." : ""));
-            }).catch(err => {
-                console.error("Ошибка копирования", err);
-            });
-        }
-    </script>
-</head>
-<body>
-    <table>
+  </head>
+  <body>
+    <div class="container">
+      <table>
         <thead>
-            <tr>
-                <th>СИТУАЦИЯ</th>
-                <th>ШАБЛОН</th>
-            </tr>
+          <tr>
+            <th>СИТУАЦИЯ</th>
+            <th>ШАБЛОН</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>♡( ◡‿◡ )</td>
-                <td onclick="copyToClipboard(this)">Благодарим за информацию! Взяли обращение в работу.</td>
-            </tr>
-			<tr>
-                <td>Как подтвердить платеж? (´･ᴗ･ ` )</td>
-                <td onclick="copyToClipboard(this)">Чтобы подтвердить платёж, Вам необходимо нажать на кнопку "Да/Нет = Поступили".</td>
-            </tr>
-			 <tr>
-                <td>(￣︿￣)</td>
-                <td onclick="copyToClipboard(this)">Ваш запрос передан в службу безопасности, пожалуйста, ожидайте.</td>
-            </tr>
-                <td>(￢_￢;)</td>
-                <td onclick="copyToClipboard(this)">Ваша выплата все еще активна, пожалуйста, ожидайте поступление в течение 15 минут.</td>
-				<td>Детализация</td>
-                <td onclick="copyToClipboard(this)">Пожалуйста, пришлите детализацию поступления.</td>
-            </tr>
-            <tr> 
-                <td>Wait</td>
-                <td onclick="copyToClipboard(this)">Оставайтесь на сайте, пока Ваша выплата активна.</td></tr>
-            <tr>
-            <tr>
-                <td>Информация</td>
-                <td onclick="copyToClipboard(this)">Информацию о всех транзакциях Вы можете найти на сайте баланс которого Вы пополняете.</td>
-                <td>?</td>
-                <td onclick="copyToClipboard(this)">Детализация поступления - это скриншот с детальной информацией о переводе, где будут видны дата/время, отправитель и получатель, сумма перевода, комиссия и тд.</td>
-            </tr>
-			<tr>
-                <td>Банк</td>
-                <td onclick="copyToClipboard(this)">Поддержка не располагает информацией на этот счёт. Вы можете оформить выплату на карту любого банка.</td>
-				<td>Реквизиты</td>
-                <td onclick="copyToClipboard(this)">К сожалению, изменить реквизит по активной выплате не предоставляется возможным.</td>
-            </tr>
-            <tr>
-                <td>Ошибка</td>
-                <td onclick="copyToClipboard(this)">По техническим причинам Вам не удалось осуществить выплату, пожалуйста, повторите запрос.</td>
-            </tr>
-		    <tr>
-			    <td>Депозит</td>
-				<td onclick="copyToClipboard(this)">У Вас есть неподтвержденный депозит. Вы совершили перевод по карте *? Для подтверждения, пришлите, пожалуйста, нам чек файлом.</td>
-			</tr>	
-            <tr>
-			    <td>Чек в успехе</td>
-			    <td onclick="copyToClipboard(this)">Средства по данному чеку уже зачислены.</td>
-			</tr>
-			<tr>
-			    <td>Платежи</td>
-				<td onclick="copyToClipboard(this)">На данный момент мы проверяем платежи, относящиеся к Вашей выплате. Пожалуйста, свяжитесь с нами если средства не поступят в течении 15 минут. Ваши средства никуда не исчезнут!</td>
-			</tr>
-            <tr>
-                <td>♡(>ᴗ•)</td>
-                <td onclick="copyToClipboard(this)">Спасибо за то, что воспользовались нашим сервисом! Хорошего вечера!</td>
-            </tr>			
+          <tr>
+            <td data-label="СИТУАЦИЯ">♡( ◡‿◡ )</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Благодарим за информацию! Взяли обращение в работу.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">Как подтвердить платеж? (´･ᴗ･ ` )</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Чтобы подтвердить платёж, Вам необходимо нажать на кнопку "Да/Нет
+              = Поступили".
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">(￣︿￣)</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Ваш запрос передан в службу безопасности, пожалуйста, ожидайте.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">(￢_￢;)</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Ваша выплата все еще активна, пожалуйста, ожидайте поступление в
+              течение 15 минут.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">Детализация</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Пожалуйста, пришлите детализацию поступления.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">Wait</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Оставайтесь на сайте, пока Ваша выплата активна.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">Информация</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Информацию о всех транзакциях Вы можете найти на сайте баланс
+              которого Вы пополняете.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">?</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Детализация поступления - это скриншот с детальной информацией о
+              переводе, где будут видны дата/время, отправитель и получатель,
+              сумма перевода, комиссия и тд.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">Банк</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Поддержка не располагает информацией на этот счёт. Вы можете
+              оформить выплату на карту любого банка.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">Реквизиты</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              К сожалению, изменить реквизит по активной выплате не
+              предоставляется возможным.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">Ошибка</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              По техническим причинам Вам не удалось осуществить выплату,
+              пожалуйста, повторите запрос.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">Депозит</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              У Вас есть неподтвержденный депозит. Вы совершили перевод по карте
+              *? Для подтверждения, пришлите, пожалуйста, нам чек файлом.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">Чек в успехе</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Средства по данному чеку уже зачислены.
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">Платежи</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              На данный момент мы проверяем платежи, относящиеся к Вашей
+
+              выплате. Пожалуйста, свяжитесь с нами если средства не поступят в
+              течении 15 минут. Ваши средства никуда не исчезнут!
+            </td>
+          </tr>
+          <tr>
+            <td data-label="СИТУАЦИЯ">♡(>ᴗ•)</td>
+            <td data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+              Спасибо за то, что воспользовались нашим сервисом! Хорошего
+              вечера!
+            </td>
+          </tr>
         </tbody>
-    </table>
-</body>
+      </table>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script>
+      function copyToClipboard(element) {
+        let text = element.innerText;
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            showNotification(
+              "Meow ^_^ <3: " +
+                text.substring(0, 100) +
+                (text.length > 100 ? "..." : "")
+            );
+          })
+          .catch((err) => {
+            console.error("Ошибка копирования", err);
+          });
+      }
+
+      function showNotification(text) {
+        const notification = document.getElementById("notification");
+        notification.textContent = text;
+        notification.style.display = "block";
+        setTimeout(() => {
+          notification.style.display = "none";
+        }, 2000);
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
 </html>
-
-
-
