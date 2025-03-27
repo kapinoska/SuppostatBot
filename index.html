@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Support Responses</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>СИТУАЦИЯ</th>
+                    <th>ШАБЛОН</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ"><b>♡</b></td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Благодарим за информацию! Взяли обращение в работу.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ" colspan="5"><b>АКТИВНЫЕ ВЫПЛАТЫ</b></td>
+                </tr>
+                <td class="situation" data-label="СИТУАЦИЯ">Клиент <b><em>повторно обращается по активной выплате</em></b>.</td>
+                <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                    Ваша выплата все еще активна, пожалуйста, ожидайте поступление в
+                    течение 15 минут.
+                </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Нужно ли <b><em>оставаться на сайте, пока выплата активна</em></b>?</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Пока выплата активна, не покидайте сайт и подтверждайте полученные переводы, в соответствии с правилами платформы.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Клиент <b><em>жалуется на транзакцию</em></b>, которую мы не находим в админке, и <b><em>не предоставляет её ID</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Уточните, пожалуйста, ID выплаты, о которой идет речь.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ" colspan="4"><b>АЛЬТЕРНАТИВНЫЕ ВЫПЛАТЫ</b></td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Запрос <b><em>отмены выплаты альтернативным способом</em></b> от клиента.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        К сожалению, у нас нет возможности отменить выплату по данному методу. Можем передать ваш запрос в службу безопасности, но тогда отмена займет до 72 часов — в это время выплата исполняться не будет. При этом нет гарантии, что она отменится, возможно она все равно будет выплачена. Отменяем выплату?
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Запрос был передан <b><em>в службу безопасности</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Ваш запрос передан в службу безопасности, пожалуйста, ожидайте.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Клиент спрашивает, <b><em>что такое оплата другим способом или альтернативным методом</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Ваша выплата будет обрабатываться дольше, чем это бывает обычно. Пожалуйста, ожидайте зачисления средств! Находиться онлайн в этом случае не нужно.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Клиент спрашивает,<b><em> как подтвердить выплату на альтернативном методе</em></b>, по которой уже пришли средства.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Выплата будет завершена автоматически, без необходимости вашего подтверждения. Вы можете закрыть страницу.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ" colspan="2"><b>ВЫПИСКА</b></td>
+                </tr>
+                <tr>
+                  <td class="situation" data-label="СИТУАЦИЯ">Клиент пишет, что <b><em>получил средства по выплате с «Мнимой ошибкой»</em></b>.</td>
+                  <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                      Даже если Вы считаете, что средства поступили по этой выплате, пришлите выписку, чтобы мы смогли проверить вывод и закрыть данный вопрос.
+                  </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Клиент <b><em>прислал выписку</em></b> с <b><em> некорректными датами</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Для решения вопроса нам необходима выписка с <b><em>число</em></b> по <b><em>число</em></b>, так как только в этом случае будут отражены все нужные транзакции. Без нее мы не сможем Вам помочь!
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ" colspan="4"><b>ДЕТАЛИЗАЦИЯ</b></td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Клиент утверждает, что <b><em>получил сумму меньше</em></b> указанной в депозите.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Пожалуйста, пришлите детализацию поступления на <b><em>сумма</em></b>.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Клиент <b><em>не подтверждает получение</em></b>, но <b><em>сообщает, что сумма была зачислена</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Если средства Вам поступили, пожалуйста, подтвердите поступление на странице выплаты. Если затрудняетесь это сделать или сталкиваетесь с трудностями - отправьте, пожалуйста, скриншот детализации данного поступления.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Клиент уточняет, <b><em>что такое детализация</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Детализация поступления - это скриншот с детальной информацией о
+                        переводе, где будут видны дата/время, отправитель и получатель,
+                        сумма перевода, комиссия и тд.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ"><b><em>Отправили детализацию</em></b> для <b><em>проверки</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Для проверки потребуется некоторое время. Пожалуйста, ожидайте! Мы сообщим Вам о результате.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ" colspan="5"><b>FAQ</b></td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ"><b><em>Банк</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Поддержка не располагает информацией на этот счёт. Вы можете
+                        оформить выплату на карту любого банка.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ"><b><em>Лимиты</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        На данный момент присутствуют только те лимиты, которые указаны на сайте. Когда их значения изменятся, Вы увидите данную информацию.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Как мне найти <b><em>чат</em></b>?</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Начните создавать заявку на пополнение аккаунта или вывод средств. Затем выберите нас как способ, и внизу экрана будет ссылка на раздел "история операций по TranzexPay" - там будет чат с нами.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Как мне найти <b><em>заявку на вывод/депозит</em></b>?</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Информацию о всех транзакциях Вы можете найти на сайте баланс которого Вы пополняете.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Клиент выплаты сообщает, что <b><em>клиент депозита просит вернуть отправленную сумму лично</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Пожалуйста, игнорируйте просьбу отправителя перевести данную сумму обратно. Вы ничего не должны возвращать. Это Ваши деньги!
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ" colspan="4"><b>ЧАТ С ДЕПОМ</b></td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Чек в статусе <b><em>"Успех"</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Средства по данному чеку уже зачислены.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">У клиента есть <b><em>зависшая заявка на депозит</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        У Вас есть депозит (пополнение) на <b><em>сумма</em></b> от <b><em>число</em></b> на реквизиты <b><em>*реквизиты</em></b> — совершали ли Вы данный перевод? Если да, то пришлите, пожалуйста, чек. Если нет, то сообщите нам об этом.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Чек в статусе <b><em>"В обработке"</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Видим, что на Вашем чеке в статусе платежа указано "В обработке", что означает, что Ваш платёж ещё не был отправлен получателю. Пожалуйста, пришлите чек с успешным статусом платежа, когда у Вас появится возможность его получить.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ">Ответ клиенту выплаты про статус <b><em>"В обработке"</em></b>.</td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Средства были Вам отправлены в размере <b><em>сумма</em></b>. Однако они на исполнении у банка отправителя — их задержали, возможно, они скоро Вам поступят. Если в течение 48 часов Вы всё-таки не получите средства, то обязательно напишите нам и предоставьте выписку по карте <b><em>*реквизиты</em></b> за соответствующие даты.
+                        Если средства Вам поступят, то, пожалуйста, сообщите нам или подтвердите поступление.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="situation" data-label="СИТУАЦИЯ"><b>♡</b></td>
+                    <td class="clickable" data-label="ШАБЛОН" onclick="copyToClipboard(this)">
+                        Спасибо за то, что воспользовались нашим сервисом! Хорошего дня!
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script>
+        let timeout;
+
+        function copyToClipboard(element) {
+            let text = element.innerText.trim();
+            navigator.clipboard
+                .writeText(text)
+                .then(() => showNotification("Скопировано:" + text.substring(0, 100) + (text.length > 100 ? "..." : "")))
+                .catch(err => console.error("Ошибка копирования", err));
+        }
+
+        function showNotification(text) {
+            const notification = document.getElementById("notification");
+            notification.textContent = text;
+            notification.style.display = "block";
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                notification.style.display = "none";
+            }, 2000);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

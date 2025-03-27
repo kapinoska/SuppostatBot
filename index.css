@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+th,
+td {
+  border: 1px solid #688893;
+  padding: 15px;
+  text-align: left;
+  transition: all 0.2s ease;
+  word-wrap: break-word;
+  font-size: 1rem;
+}
+
+th {
+  background-color: #688893;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+td {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.situation {
+  cursor: default;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.clickable:active {
+  transform: scale(0.99);
+}
+
+.clickable:hover {
+  background-color: #ffffff;
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  display: none;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from {
+      bottom: -50px;
+  }
+
+  to {
+      bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+      display: none;
+  }
+
+  thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+  }
+
+  tr {
+      margin: 0 0 15px 0;
+      background: #ffffff;
+      border-radius: 10px;
+  }
+
+  td {
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      z-index: 1;
+      padding-left: 45%;
+      min-height: 40px;
+  }
+
+  td:before {
+      position: absolute;
+      left: 15px;
+      width: 40%;
+      padding-right: 10px;
+      white-space: nowrap;
+      content: attr(data-label);
+      font-weight: bold;
+      color: #333;
+  }
+
+  .container {
+      max-width: 1200px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 20px;
+      border: 1px solid #ffffff;
+  }
+}
+
+@media (max-width: 480px) {
+  td {
+      padding-left: 40%;
+      font-size: 0.9rem;
+  }
+
+  td:before {
+      font-size: 0.8rem;
+  }
+}
